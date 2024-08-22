@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import TextNavbar from "../Text/TextNavbar";
 import { useLang } from "../../context/LangContext";
+import { scrollToSection } from "../../utils/function";
 
 const Drawer = () => {
   // Estado para controlar la visibilidad del drawer
@@ -16,7 +17,15 @@ const Drawer = () => {
   const closeDrawer = () => {
     setIsOpen(false);
   };
+
   const { data } = useLang();
+
+  // Función para manejar el clic en una opción del menú
+  const handleMenuClick = (link) => {
+    scrollToSection(link);
+    closeDrawer(); // Cierra el drawer después de hacer clic en la opción
+  };
+
   return (
     <>
       <div className="text-center flex justify-center items-center">
@@ -58,7 +67,7 @@ const Drawer = () => {
         </button>
         <section className="py-20 flex flex-col gap-10">
           {data?.navbar?.items.map((e) => (
-            <section key={e.name} onClick={() => scrollToSection(e.link)}>
+            <section key={e.name} onClick={() => handleMenuClick(e.link)}>
               <TextNavbar text={e.name} />
             </section>
           ))}

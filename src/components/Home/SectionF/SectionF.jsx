@@ -5,6 +5,8 @@ import TextSubTitle from "../../../shared/Text/TextSubTitle";
 import Inspector from "../../../shared/Inspector/Inspector";
 import Velocity from "../../../shared/Velocity/Velocity";
 import Container from "../../../shared/Container";
+import Footer from "../../../shared/Footer/Footer";
+import TextTitle from "../../../shared/Text/TextTitle";
 
 const SectionF = ({ onObserver, id, currentStep }) => {
   return (
@@ -18,24 +20,25 @@ export default SectionF;
 
 const RevealLinks = (id, currentStep) => {
   return (
-    <section className="bg-blue-300 h-screen py-20">
+    <section className="bg-yellow-400 h-screen py-5 relative">
       <Container extra={"relative flex gap-10 flex-col"}>
         <section className="flex flex-col gap-5 py-10">
           <TextSubTitleItalic text={"Gracias por visitar mi portfolio"} extra={""} />
-          <TextSubTitle
+          <TextTitle
             text={
               "Estoy aquí para cualquier pregunta o colaboración. Buscame en mis redes y conectemos."
             }
           />
         </section>
-        <section className="flex flex-col gap-4">
+        <section className="flex flex-wrap  gap-10">
           <FlipLink href="https://www.linkedin.com/in/jes%C3%BAs-eduardo-moreno/">
             Linkedin
           </FlipLink>
           <FlipLink href="https://github.com/librotero">GitHub</FlipLink>
-          <FlipLink href="https://wa.me/+5492612336104">What'sApp</FlipLink>
+          <FlipLink href="https://wa.me/+5492615059621">What'sApp</FlipLink>
         </section>
       </Container>
+      <Footer extra={"absolute bottom-0 left-0 w-full bg-yellow-400 dark:bg-yellow-400"} />
     </section>
   );
 };
@@ -51,7 +54,7 @@ const FlipLink = ({ children, href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-6xl  h-fit"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-6xl  h-fit text-white"
       style={{
         lineHeight: 0.95,
       }}

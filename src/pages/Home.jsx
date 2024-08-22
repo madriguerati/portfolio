@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <Navbar currentStep={currentStep} />
-      <SectionA id={""} currentStep={currentStep} onObserver={handleStepChange} />
+      <SectionA id={"Inicio"} currentStep={currentStep} onObserver={handleStepChange} />
 
       <SectionB id={"Sobre mí"} currentStep={currentStep} onObserver={handleStepChange} />
       <SectionC
@@ -30,7 +30,6 @@ const Home = () => {
         onObserver={handleStepChange}
       />
       <SectionF id={"contacto"} currentStep={currentStep} onObserver={handleStepChange} />
-      <Footer />
     </>
   );
 };

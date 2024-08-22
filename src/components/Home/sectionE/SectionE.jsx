@@ -1,7 +1,7 @@
 import Inspector from "../../../shared/Inspector/Inspector";
 import Section from "../../../shared/Section/Section";
 import TextBody from "../../../shared/Text/TextBody";
-import TextTitle from "../../../shared/Text/TextTitle";
+import qre from "/public/img/qre.png";
 
 const SectionE = ({ id, onObserver }) => {
   return (

@@ -53,9 +53,11 @@ const SectionD = ({ id, onObserver, currentStep }) => {
         h={"h-full"}
         title={"Experiencia Laboral"}
         positionText={"text-center"}
-        extra={"py-40"}
+        extra={"py-40 mt-80"}
       >
-        <Container extra={" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 w-full gap-20 "}>
+        <Container
+          extra={" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 w-full gap-20 "}
+        >
           <article className="w-full flex flex-col gap-10 ">
             <TextSubTitleItalic text={"Educación & Idiomas"} />
             <TextBody
@@ -69,7 +71,7 @@ const SectionD = ({ id, onObserver, currentStep }) => {
                 <TextBody text={body} />
               </article>
             ))}
-            <section className="flex justify-start items-center gap-10">
+            <section className="flex flex-wrap justify-start items-center gap-10 pt-5 sm:pt-5 md:pt-10 lg:pt-20">
               <article className="flex flex-col justify-center items-center gap-5">
                 <img
                   src="https://img.freepik.com/premium-photo/flag-united-kingdom-uk-aka-union-jack_469558-1815.jpg"
@@ -92,7 +94,7 @@ const SectionD = ({ id, onObserver, currentStep }) => {
                   alt=""
                   className="max-w-32  rounded-lg h-20"
                 />
-                <TextBody text={"A2"} />
+                <TextBody text={"A1"} />
               </article>
             </section>
           </article>
