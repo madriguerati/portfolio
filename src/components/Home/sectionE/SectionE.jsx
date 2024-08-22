@@ -14,7 +14,7 @@ const SectionE = ({ id, onObserver }) => {
           href="https://drive.google.com/file/d/1opqos7gKpLhMZ-cUV5ZFcCiD3aq450mE/view?usp=sharing"
           className="py-2"
         >
-          <img src="/public/img/qre.png" alt="" className="max-w-80" />
+          <img src={qre} alt="" className="max-w-80" />
         </a>
         <TextBody text={"Cliquea o escanea el código QR"} />
       </Section>
