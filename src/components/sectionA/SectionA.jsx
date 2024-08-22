@@ -68,24 +68,6 @@ const SectionA = ({ onObserver, id }) => {
         h={"h-screen sm:h-screen md:h-screen"}
         extra={"relative z-20"}
       >
-        {/* <motion.img
-          src={data?.sectionA?.img}
-          alt=""
-          className="absolute top-10 sm:top-10 md:top-28 right-10 z-0 opacity-10 w-40"
-          style={{ y: y1, rotate: rotate1 }} // Aplica la animación de movimiento vertical y rotación
-        />
-        <motion.img
-          src={data?.sectionA?.img}
-          alt=""
-          className="absolute top-72 sm:top-72 md:top-96 right-0 sm:right-0 md:right-40 z-0 opacity-30 w-60"
-          style={{ y: y2, rotate: rotate2 }} // Aplica la animación de movimiento vertical y rotación
-        />
-        <motion.img
-          src={data?.sectionA?.img}
-          alt=""
-          className="absolute top-[500px] sm:top-[600px] md:top-[600px]  left-0 sm:left-0 md:left-40 z-10 opacity-20 w-60"
-          style={{ y: y3, rotate: rotate3 }} // Aplica la animación de movimiento vertical y rotación
-        /> */}
         <section className="  opacity-5 z-10 w-full absolute top-0 left-0">
           <motion.section style={{ y: y3 }}>
             {" "}
@@ -140,8 +122,8 @@ const SectionA = ({ onObserver, id }) => {
               text={data?.sectionA?.buttonInfo}
               w={"w-full sm:w-full md:w-2/3"}
               display={"start"}
-              bg={"bg-yellow-400"}
-              border={"border-yellow-600 border-2"}
+              bg={"bg-Yellow dark:bg-YellowDark"}
+              border={"border-Yellow dark:border-YellowDark border-2"}
               hover={"hover:bg-yellow-600"}
               textColor={"black"} // Corrige "balck" a "black"
               disabled={false}

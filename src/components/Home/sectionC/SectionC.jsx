@@ -82,7 +82,7 @@ const SectionC = ({ id, onObserver }) => {
         h={"h-full"}
         title={"Experiencia Laboral"}
         positionText={"text-center"}
-        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-5 sm:py-10 md:py-40"}
+        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-32 sm:py-10 md:py-40"}
       >
         {steps.map((step, index) => (
           <Card
@@ -116,18 +116,14 @@ const Card = ({
   const shouldAnimate = currentStep === id;
   return (
     <Inspector index={id} onObserver={handleStepChange}>
-      <Container>
+      <Container extra={" flex flex-col w-full "}>
         <motion.section
           initial={{ opacity: 0, x: 0 }}
           animate={shouldAnimate === true ? { opacity: 1, x: 0 } : { opacity: 0, x: 0 }}
           transition={{ duration: 0.5 }}
-          className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-2 md:gap-2 lg:gap-20 h-fit sm:h-fit md:h-fit lg:h-fit`}
+          className={`flex  w-full`}
         >
-          <section
-            className={`${
-              id % 2 === 0 ? "" : "order-none sm:order-none md:order-none lg:order-1 "
-            } flex  justify-center flex-col items-start h-fit`}
-          >
+          <section className={` flex  justify-center flex-col items-start h-fit`}>
             <TextSubTitle text={title} extra={"font-bold"} />
 
             <section className="flex flex-col gap-5 pt-10">
@@ -145,26 +141,12 @@ const Card = ({
               </section>
             </section>
           </section>
-          <motion.section
-            initial={{ opacity: 0.2, x: 0 }}
-            animate={shouldAnimate === true ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="sm:flex flex-col justify-center items-center h-full bg-white  bg-opacity-60 rounded-xl hidden"
-          >
-            <MetricsSection data={metrics} currentStep={currentStep} index={index} />
-          </motion.section>
         </motion.section>
-      </Container>
-      <motion.section
-        initial={{ opacity: 0.2, x: 0 }}
-        animate={shouldAnimate === true ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col justify-center items-center h-full bg-white  bg-opacity-60 mt-10 sm:hidden"
-      >
-        <Container>
+
+        <section className="flex justify-center w-full pt-20">
           <MetricsSection data={metrics} currentStep={currentStep} index={index} />
-        </Container>
-      </motion.section>
+        </section>
+      </Container>
     </Inspector>
   );
 };
