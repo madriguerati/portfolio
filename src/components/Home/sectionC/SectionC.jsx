@@ -82,22 +82,20 @@ const SectionC = ({ id, onObserver }) => {
         h={"h-full"}
         title={"Experiencia Laboral"}
         positionText={"text-center"}
-        extra={"  "}
+        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-40 sm:py-10 md:py-40"}
       >
-        <>
-          {steps.map((step, index) => (
-            <Card
-              title={step.title}
-              currentStep={currentStep}
-              index={step.id}
-              handleStepChange={handleStepChange}
-              listItems={step.listItems}
-              metrics={step.metrics}
-              technologies={step.technologies}
-              id={index}
-            />
-          ))}
-        </>
+        {steps.map((step, index) => (
+          <Card
+            title={step.title}
+            currentStep={currentStep}
+            index={step.id}
+            handleStepChange={handleStepChange}
+            listItems={step.listItems}
+            metrics={step.metrics}
+            technologies={step.technologies}
+            id={index}
+          />
+        ))}
       </Section>
     </Inspector>
   );
@@ -123,36 +121,50 @@ const Card = ({
           initial={{ opacity: 0, x: 0 }}
           animate={shouldAnimate === true ? { opacity: 1, x: 0 } : { opacity: 0, x: 0 }}
           transition={{ duration: 0.5 }}
-          className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-20 h-screen`}
+          className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-2 md:gap-2 lg:gap-20 h-fit sm:h-fit md:h-fit lg:h-fit`}
         >
           <section
-            className={`${id % 2 === 0 ? "" : "order-1"} flex  justify-center flex-col items-start`}
+            className={`${
+              id % 2 === 0 ? "" : "order-none sm:order-none md:order-none lg:order-1 "
+            } flex  justify-center flex-col items-start h-fit`}
           >
             <TextSubTitle text={title} extra={"font-bold"} />
 
-            <section className="flex flex-col gap-5 py-10">
+            <section className="flex flex-col gap-5 pt-10">
               {listItems.map((e, index) => (
                 <TextBody text={e} key={index} />
               ))}
             </section>
-            <TextSubTitle text={"Tecnologías"} extra={"font-bold"} />
+            <section className="pt-10">
+              <TextSubTitle text={"Tecnologías"} extra={"font-bold"} />
 
-            <section className="flex  gap-5 py-10">
-              {technologies.map((e, index) => (
-                <TextBody text={e} key={index} />
-              ))}
+              <section className="flex flex-wrap  gap-5 pt-5">
+                {technologies.map((e, index) => (
+                  <TextBody text={e} key={index} />
+                ))}
+              </section>
             </section>
           </section>
           <motion.section
             initial={{ opacity: 0.2, x: 0 }}
             animate={shouldAnimate === true ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="flex flex-col justify-center items-center "
+            className="sm:flex flex-col justify-center items-center h-full bg-white  bg-opacity-60 rounded-xl hidden"
           >
             <MetricsSection data={metrics} currentStep={currentStep} index={index} />
           </motion.section>
         </motion.section>
       </Container>
+      <motion.section
+        initial={{ opacity: 0.2, x: 0 }}
+        animate={shouldAnimate === true ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col justify-center items-center h-full bg-white  bg-opacity-60 mt-10 sm:hidden"
+      >
+        <Container>
+          <MetricsSection data={metrics} currentStep={currentStep} index={index} />
+        </Container>
+      </motion.section>
     </Inspector>
   );
 };

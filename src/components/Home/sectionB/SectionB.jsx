@@ -4,6 +4,13 @@ import { useRef } from "react";
 import TextBody from "../../../shared/Text/TextBody";
 import Inspector from "../../../shared/Inspector/Inspector";
 import Container from "../../../shared/Container";
+import f from "/public/img/aboutme/f.jpg";
+import a from "/public/img/aboutme/a.jpg";
+import b from "/public/img/aboutme/b.jpg";
+import h from "/public/img/aboutme/h.jpg";
+import d from "/public/img/aboutme/d.jpg";
+import e from "/public/img/aboutme/e.jpg";
+import first from "/public/img/aboutme/first.jpg";
 
 const SectionB = ({ currentStep, id, onObserver }) => {
   return (
@@ -59,7 +66,7 @@ const CenterImage = () => {
         clipPath,
         backgroundSize,
         opacity,
-        backgroundImage: "url(/public/img/aboutme/f.jpg)",
+        backgroundImage: `url(${f})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
@@ -69,23 +76,23 @@ const CenterImage = () => {
 
 const ParallaxImages = () => {
   return (
-    <div className="mx-auto  px-4 ">
+    <div className="mx-auto  px-4 hidden sm:hidden md:hidden lg:block ">
       <ParallaxImg
-        src="/public/img/aboutme/first.jpg"
+        src={first}
         alt="And example of a space launch"
         start={-100}
         end={50}
         className="w-96"
       />
       <ParallaxImg
-        src="/public/img/aboutme/h.jpg"
+        src={h}
         alt="An example of a space launch"
         start={-100}
         end={-1000}
         className="mx-auto w-1/2  object-cover"
       />
       <ParallaxImg
-        src="/public/img/aboutme/e.jpg"
+        src={e}
         alt="Orbiting satellite"
         start={-1500}
         end={100}
@@ -122,7 +129,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 
 const Schedule = () => {
   return (
-    <section id="launch-schedule" className="pt-64">
+    <section id="launch-schedule" className="pt-5 pb-40 sm:pb-10 sm:pt-64">
       <Container>
         <motion.article
           initial={{ y: 48, opacity: 0 }}

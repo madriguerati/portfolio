@@ -62,7 +62,12 @@ const SectionA = ({ onObserver, id }) => {
   ];
   return (
     <Inspector index={id} onObserver={onObserver}>
-      <Section id={"home"} type={"center"} h={"h-screen"} extra={"relative z-20"}>
+      <Section
+        id={"home"}
+        type={"center"}
+        h={"h-screen sm:h-screen md:h-screen"}
+        extra={"relative z-20"}
+      >
         {/* <motion.img
           src={data?.sectionA?.img}
           alt=""
@@ -135,7 +140,7 @@ const SectionA = ({ onObserver, id }) => {
               text={data?.sectionA?.buttonInfo}
               w={"w-full sm:w-full md:w-2/3"}
               display={"start"}
-              bg={"bg-yellow-500"}
+              bg={"bg-yellow-400"}
               border={"border-yellow-600 border-2"}
               hover={"hover:bg-yellow-600"}
               textColor={"black"} // Corrige "balck" a "black"
@@ -153,7 +158,7 @@ export default SectionA;
 
 const ItemVelocity = ({ item }) => {
   return (
-    <h1 className="text-[100px] 2xl:text-[300px] xl:text-[300px] lg:text-[250px] md:text-[400px] sm:text-[100px] font-extrabold uppercase m-0 p-0 leading-[250px]">
+    <h1 className="text-[300px] 2xl:text-[300px] xl:text-[300px] lg:text-[250px] md:text-[400px] sm:text-[100px] font-extrabold uppercase m-0 p-0 leading-[250px]">
       {item}
     </h1>
   );

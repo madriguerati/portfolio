@@ -31,7 +31,6 @@ const Navbar = ({ currentStep }) => {
 
       setLastScrollY(currentScrollY);
 
-      // Determinar la sección actual basada en el scroll
       let sectionTitle = "";
       items.forEach((section) => {
         const sectionElement = document.getElementById(section);
@@ -55,7 +54,7 @@ const Navbar = ({ currentStep }) => {
 
   return (
     <section
-      className={`fixed top-0 left-0 flex justify-center w-full text-white z-40 ${
+      className={`fixed top-0 left-0 flex justify-center w-full text-white  z-40 ${
         currentStep === "contacto" ? "hidden transition" : ""
       }`}
     >
@@ -74,7 +73,7 @@ const Navbar = ({ currentStep }) => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <Container extra={"flex justify-between w-full"}>
+        <Container extra={"flex justify-between w-full items-center"}>
           {scrollY > 10 ? (
             <TextSubTitle text={currentStep} color={"text-white"} />
           ) : (
@@ -82,7 +81,7 @@ const Navbar = ({ currentStep }) => {
           )}
 
           <motion.section
-            className={`sm:hidden md:flex justify-center items-center gap-10 transition-opacity duration-300 ${
+            className={`hidden sm:hidden md:hidden lg:flex justify-center items-center gap-10 transition-opacity duration-300 ${
               showFullMenu ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -93,13 +92,13 @@ const Navbar = ({ currentStep }) => {
             ))}
           </motion.section>
           <section className="flex justify-center items-center gap-0">
-            <section className="hidden sm:hidden md:flex">
+            {/* <section className="hidden sm:hidden md:flex">
               <DropdownLang />
-            </section>
+            </section> */}
             <section className="hidden sm:hidden md:flex">
               <DarkModeToggle />
             </section>
-            <section className="flex sm:flex md:hidden">
+            <section className="flex sm:flex md:flex lg:hidden ">
               <Drawer />
             </section>
           </section>
