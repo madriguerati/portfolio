@@ -82,7 +82,7 @@ const SectionC = ({ id, onObserver }) => {
         h={"h-full"}
         title={"Experiencia Laboral"}
         positionText={"text-center"}
-        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-40 sm:py-10 md:py-40"}
+        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-5 sm:py-10 md:py-40"}
       >
         {steps.map((step, index) => (
           <Card

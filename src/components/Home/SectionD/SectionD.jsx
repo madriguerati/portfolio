@@ -53,7 +53,7 @@ const SectionD = ({ id, onObserver, currentStep }) => {
         h={"h-full"}
         title={"Experiencia Laboral"}
         positionText={"text-center"}
-        extra={"py-40 mt-80"}
+        extra={"py-5 sm:py-40 mt-20 sm:mt-40"}
       >
         <Container
           extra={" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 w-full gap-20 "}
