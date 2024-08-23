@@ -20,10 +20,6 @@ const SectionC = ({ id, onObserver }) => {
         "En mi rol como Desarrollador Full-Stack en Inside Dark Studio, lideré el desarrollo de una innovadora plataforma Web3 para juegos utilizando Motoko. Mi trabajo involucró la creación de un ecosistema completo que incluye un marketplace integrado, pasarelas de pago seguras, funcionalidades de chat y salas de streaming en vivo. Implementé soluciones avanzadas para asegurar una experiencia de usuario fluida y segura, utilizando las últimas tecnologías en blockchain para garantizar la transparencia y la seguridad en todas las transacciones.",
       responsibilities: [
         {
-          subtitle: "Desarrollo Tecnológico",
-          text: "Implementé soluciones tecnológicas avanzadas utilizando Motoko para el desarrollo de contratos inteligentes. Utilicé TypeScript y JavaScript para la programación del frontend y backend, asegurando que el sistema fuera robusto y escalable. Esta labor incluyó la integración de diversas APIs y servicios para optimizar la funcionalidad del sistema.",
-        },
-        {
           subtitle: "Ecosistema Completo",
           text: "Diseñé y desarrollé un marketplace completo que incluye funciones de compra y venta, así como pasarelas de pago seguras para facilitar transacciones. Además, creé funcionalidades de chat y salas de stream para mejorar la interacción del usuario y proporcionar una experiencia inmersiva en la plataforma.",
         },
@@ -44,7 +40,6 @@ const SectionC = ({ id, onObserver }) => {
       metrics: [
         { name: "Proyectos Completados", count: 10 },
         { name: "Horas de Desarrollo", count: 3120 },
-        { name: "Tecnologías Implementadas", count: 10 },
       ],
     },
     {
@@ -59,10 +54,7 @@ const SectionC = ({ id, onObserver }) => {
           subtitle: "Arquitectura Descentralizada",
           text: "Diseñé una arquitectura blockchain para el almacenamiento y reproducción de música, asegurando alta seguridad y resistencia a la censura. Esto incluyó la implementación de nodos descentralizados y contratos inteligentes para gestionar el acceso y la distribución de contenido musical.",
         },
-        {
-          subtitle: "Integración Tecnológica",
-          text: "Implementé el backend utilizando TypeScript y JavaScript, desarrollé la interfaz con React, y utilicé socket.io para habilitar la comunicación en tiempo real. Integré diversos servicios para asegurar una experiencia de usuario fluida y optimizada para la reproducción de música.",
-        },
+
         {
           subtitle: "Interfaz Intuitiva",
           text: "Creé una interfaz de usuario intuitiva y reactiva que facilita la exploración y reproducción de música descentralizada. Esto incluyó el diseño de un sistema de navegación fácil de usar y la integración de funcionalidades de búsqueda y filtrado de música.",
@@ -80,7 +72,6 @@ const SectionC = ({ id, onObserver }) => {
       metrics: [
         { name: "Proyectos Desarrollados", count: 1 },
         { name: "Horas de Desarrollo", count: 480 },
-        { name: "Tecnologías Utilizadas", count: 6 },
       ],
     },
     {
@@ -113,7 +104,6 @@ const SectionC = ({ id, onObserver }) => {
         { name: "Fases del Proyecto Gestionadas", count: 5 },
         { name: "Módulos Desarrollados", count: 8 },
         { name: "Clientes Atendidos", count: 1 },
-        { name: "Tecnologías Implementadas", count: 4 },
       ],
     },
     {
@@ -141,7 +131,6 @@ const SectionC = ({ id, onObserver }) => {
       metrics: [
         { name: "Horas de Desarrollo", count: 2400 },
         { name: "Clientes Atendidos", count: 15 },
-        { name: "Tecnologías Utilizadas", count: 4 },
       ],
     },
   ];
@@ -154,7 +143,7 @@ const SectionC = ({ id, onObserver }) => {
         h={"h-full"}
         title={"Experiencia Laboral"}
         positionText={"text-center"}
-        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-5 sm:py-10 md:py-40"}
+        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-32 sm:py-10 md:py-40"}
       >
         {steps.map((step, index) => (
           <Card {...step} id={step.id} />
@@ -194,18 +183,18 @@ const Card = ({
             {title}
           </h3>
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <TextSubTitle text={role} />
-            <TextSubTitle text={duration} extra={"font-bold text-end"} />
+            <TextBody text={role} extra={"font-bold"} />
+            <TextBody text={duration} extra={" text-end"} />
           </section>
           <section className="flex flex-col gap-5 pt-10">
             <TextBody text={description} />
           </section>
-          <section className="flex flex-col gap-5 pt-10">
+          <section className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10">
             {responsibilities.map(({ subtitle, text }, index) => (
-              <section key={index} className="">
-                <TextSubTitle text={subtitle} key={index} extra={"font-bold"} />{" "}
+              <motion.section key={index} className="">
+                <TextSubTitle text={subtitle} key={index} extra={"font-bold pb-10"} />{" "}
                 <TextBody text={text} key={index} />
-              </section>
+              </motion.section>
             ))}
           </section>
         </section>
