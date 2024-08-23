@@ -22,7 +22,7 @@ const MetricsSection = ({ data, id, currentStep }) => {
   }, [isInView, animationTriggered, data]);
 
   return (
-    <section ref={ref} className="flex flex-wrap gap-10 w-full">
+    <section ref={ref} className="sm:flex sm:flex-wrap grid-cols-2 grid gap-10 w-full">
       {data.map(({ name }) => (
         <section key={name} className="flex flex-col justify-center items-center gap-5">
           <TextBody text={name} extra={"text-center"} />
