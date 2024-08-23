@@ -20,9 +20,9 @@ export default SectionF;
 
 const RevealLinks = (id, currentStep) => {
   return (
-    <section className="bg-yellow-400 h-screen py-5 relative">
+    <section className="bg-Yellow dark:bg-YellowDark h-screen py-5 relative">
       <Container extra={"relative flex gap-10 flex-col"}>
-        <section className="flex flex-col gap-5 py-10">
+        <section className="flex flex-col gap-5 pt-10">
           <TextSubTitleItalic text={"Gracias por visitar mi portfolio"} extra={""} />
           <TextTitle
             text={
@@ -38,7 +38,7 @@ const RevealLinks = (id, currentStep) => {
           <FlipLink href="https://wa.me/+5492615059621">What'sApp</FlipLink>
         </section>
       </Container>
-      <Footer extra={"absolute bottom-0 left-0 w-full bg-yellow-400 dark:bg-yellow-400"} />
+      <Footer extra={"absolute bottom-0 left-0 w-full bg-Yellow dark:bg-YellowDark"} />
     </section>
   );
 };

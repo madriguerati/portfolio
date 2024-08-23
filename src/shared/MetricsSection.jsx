@@ -22,16 +22,14 @@ const MetricsSection = ({ data, id, currentStep }) => {
   }, [isInView, animationTriggered, data]);
 
   return (
-    <section ref={ref} className="grid grid-cols-2 sm:grid-cols-2 w-full">
+    <section ref={ref} className="sm:flex sm:flex-wrap grid-cols-2 grid gap-10 w-full">
       {data.map(({ name }) => (
-        <article key={name} className="flex justify-center items-center py-5 ">
-          <section className="flex flex-col justify-center items-center gap-5">
-            <TextBody text={name} extra={"text-center"} />
-            <motion.span initial={{ opacity: 1 }} animate={{ opacity: 1 }}>
-              <CountUp end={animatedCounts[name] || 0} duration={1} />
-            </motion.span>
-          </section>
-        </article>
+        <section key={name} className="flex flex-col justify-center items-center gap-5">
+          <TextBody text={name} extra={"text-center"} />
+          <motion.span initial={{ opacity: 1 }} animate={{ opacity: 1 }}>
+            <CountUp end={animatedCounts[name] || 0} duration={1} />
+          </motion.span>
+        </section>
       ))}
     </section>
   );

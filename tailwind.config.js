@@ -54,10 +54,11 @@ module.exports = {
         loose: "2",
       },
       colors: {
+        Yellow: "rgb(255, 200, 0)",
         BlackCeniza: "#2D3142",
         Green: "#3DE32F",
         GreenHover: "#2a9120",
-        LemonYellow: "#E5FF3A",
+        YellowDark: "rgb(131, 81, 1)",
         Gris: "#CCCCCC",
       },
     },
