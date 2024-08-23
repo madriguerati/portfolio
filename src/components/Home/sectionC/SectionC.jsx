@@ -7,6 +7,7 @@ import TextBody from "../../../shared/Text/TextBody";
 import TextSubTitle from "../../../shared/Text/TextSubTitle";
 import { motion } from "framer-motion";
 import Container from "../../../shared/Container";
+import TextSubTitleItalic from "../../../shared/Text/TextSubTitleItalic";
 
 const SectionC = ({ id, onObserver }) => {
   const [currentStep, setCurrentStep] = useState("1");
@@ -76,26 +77,12 @@ const SectionC = ({ id, onObserver }) => {
 
   return (
     <Inspector index={id} onObserver={onObserver}>
-      <Section
-        id={"experiencias"}
-        type={"center"}
-        h={"h-full"}
-        title={"Experiencia Laboral"}
-        positionText={"text-center"}
-        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-32 sm:py-10 md:py-40"}
-      >
-        {steps.map((step, index) => (
-          <Card
-            title={step.title}
-            currentStep={currentStep}
-            index={step.id}
-            handleStepChange={handleStepChange}
-            listItems={step.listItems}
-            metrics={step.metrics}
-            technologies={step.technologies}
-            id={index}
-          />
-        ))}
+      <Section id={id} type={""} h={""} extra={""}>
+        <Container extra={"gap-40 flex flex-col"}>
+          {steps.map((step, index) => (
+            <Card key={step.title} {...step} />
+          ))}
+        </Container>
       </Section>
     </Inspector>
   );
@@ -115,38 +102,12 @@ const Card = ({
 }) => {
   const shouldAnimate = currentStep === id;
   return (
-    <Inspector index={id} onObserver={handleStepChange}>
-      <Container extra={" flex flex-col w-full "}>
-        <motion.section
-          initial={{ opacity: 0, x: 0 }}
-          animate={shouldAnimate === true ? { opacity: 1, x: 0 } : { opacity: 0, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className={`flex  w-full`}
-        >
-          <section className={` flex  justify-center flex-col items-start h-fit`}>
-            <TextSubTitle text={title} extra={"font-bold"} />
-
-            <section className="flex flex-col gap-5 pt-10">
-              {listItems.map((e, index) => (
-                <TextBody text={e} key={index} />
-              ))}
-            </section>
-            <section className="pt-10">
-              <TextSubTitle text={"Tecnologías"} extra={"font-bold"} />
-
-              <section className="flex flex-wrap  gap-5 pt-5">
-                {technologies.map((e, index) => (
-                  <TextBody text={e} key={index} />
-                ))}
-              </section>
-            </section>
-          </section>
-        </motion.section>
-
-        <section className="flex justify-center w-full pt-20">
-          <MetricsSection data={metrics} currentStep={currentStep} index={index} />
-        </section>
-      </Container>
-    </Inspector>
+    <section>
+      <TextSubTitle text={title} />{" "}
+      {listItems.map((e, index) => (
+        <TextBody text={e} key={index} />
+      ))}
+      <MetricsSection data={metrics} />
+    </section>
   );
 };
