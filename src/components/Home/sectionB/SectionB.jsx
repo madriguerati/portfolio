@@ -129,11 +129,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 
 const Schedule = () => {
   return (
-    <section
-      id="launch-schedule"
-      className="pt-32
-     pb-40 sm:pb-10 sm:pt-64"
-    >
+    <section id="launch-schedule" className="py-5 pb-0 sm:pb-10 sm:pt-64">
       <Container>
         <motion.article
           initial={{ y: 48, opacity: 0 }}

@@ -12,6 +12,7 @@ const SectionF = ({ onObserver, id, currentStep }) => {
   return (
     <Inspector index={id} onObserver={onObserver}>
       <RevealLinks id={id} currentStep={currentStep} />
+      <BackToTopButton id={id} currentStep={currentStep} />
     </Inspector>
   );
 };
@@ -106,5 +107,40 @@ const FlipLink = ({ children, href }) => {
         ))}
       </div>
     </motion.a>
+  );
+};
+
+import React, { useState, useEffect } from "react";
+import { FaArrowUp } from "react-icons/fa";
+import { scrollToSection } from "../../../utils/function";
+
+const BackToTopButton = ({ id, currentStep }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (currentStep === "contacto") {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+  }, [currentStep]);
+
+  return (
+    <motion.button
+      onClick={() => scrollToSection("Inicio")}
+      className="fixed bottom-40 right-5  sm:bottom-20 sm:right-20 p-4 border-2 border-white text-black rounded-full shadow-lg"
+      initial={{ opacity: 0, y: 50, rotate: 180 }}
+      animate={{
+        opacity: visible ? 1 : 0,
+        y: visible ? 0 : 50,
+        rotate: visible ? 0 : 180,
+      }}
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+    >
+      <FaArrowUp size={24} />
+    </motion.button>
   );
 };
