@@ -1,5 +1,4 @@
 export const scrollToSection = (id) => {
-  console.log("hola que yapapapapapa", id);
   const target = document.getElementById(id);
   if (target) {
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
