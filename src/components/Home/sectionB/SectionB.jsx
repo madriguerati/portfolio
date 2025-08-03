@@ -25,7 +25,7 @@ const SectionB = ({ currentStep, id, onObserver }) => {
             //   syncTouch: true,
           }}
         >
-          <Hero />
+          {/* <Hero /> */}
           <Schedule />
         </ReactLenis>
       </section>
