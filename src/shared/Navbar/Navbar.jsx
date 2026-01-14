@@ -92,12 +92,6 @@ const Navbar = ({ currentStep }) => {
             ))}
           </motion.section>
           <section className="flex justify-center items-center gap-0">
-            {/* <section className="hidden sm:hidden md:flex">
-              <DropdownLang />
-            </section> */}
-            <section className="hidden sm:hidden md:flex">
-              <DarkModeToggle />
-            </section>
             <section className="flex sm:flex md:flex lg:hidden ">
               <Drawer />
             </section>

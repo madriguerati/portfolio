@@ -5,7 +5,7 @@ const TextBody = ({ text, position, color, extra }) => {
     <p
       className={`${position} ${extra} ${
         color ? color : "text-BlackCeniza"
-      }   text-md sm:text-sm md:text-md lg:text-md xl:text-lg 2xl:text-xl leading-tight font-Poppins dark:text-white`}
+      }   text-md sm:text-sm md:text-md lg:text-md xl:text-lg 2xl:text-lg leading-tight font-Poppins dark:text-white`}
     >
       {text}
     </p>

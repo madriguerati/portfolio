@@ -6,103 +6,148 @@ import TextSubTitle from "../../../shared/Text/TextSubTitle";
 import SkillsSection from "../../../shared/Skills/Skills";
 import TextSubTitleItalic from "../../../shared/Text/TextSubTitleItalic";
 
-const SectionD = ({ id, onObserver, currentStep }) => {
-  const experiences = [
+const SectionD = ({ id, onObserver }) => {
+  const education = [
     {
-      title: "Java Full Stack Developer en EGG Education",
-      body: "Aporté 600 horas en el desarrollo Full-Stack utilizando Java en EGG Education. Este rol me permitió fortalecer mis competencias técnicas en el manejo tanto del frontend como del backend, trabajando en proyectos que abarcan toda la pila tecnológica. Habilidades desarrolladas: Desarrollo Full-Stack, Java, integración frontend/backend.",
+      title: "Tecnicatura en Administración de Empresas",
+      institution: "Universidad Tecnológica Nacional (UTN)",
+      period: "2024 – 2026 (en curso)",
+      description:
+        "Formación integral en gestión estratégica, análisis financiero, coordinación de recursos humanos y procesos organizacionales. Enfoque en liderazgo, toma de decisiones y gestión en entornos públicos y privados. Fuerte enfoque en dirección de proyectos, metodologías ágiles, desarrollo y gestión, liderazgo de equipos multidisciplinarios y toma de decisiones estratégicas en entornos públicos y privados. La carrera combina herramientas de administración con competencias prácticas para la dirección y escalabilidad de productos.",
     },
     {
-      title: "Diplomado en Project Management - UTN",
-      body: "Completé un diplomado en gestión de proyectos en la Universidad Tecnológica Nacional (UTN), donde adquirí un profundo entendimiento de la gestión de productos en la era digital, enfocándome en técnicas modernas de planificación y ejecución. Habilidades desarrolladas: Gestión de proyectos, planificación, ejecución, herramientas digitales.",
-    },
-    {
-      title: "Diplomado en Metodologías Ágiles - UTN",
-      body: "Obtuve un diplomado en metodologías ágiles en UTN, desarrollando habilidades avanzadas en la gestión ágil de proyectos. Aprendí a adaptar y aplicar metodologías ágiles en entornos digitales dinámicos para mejorar la eficiencia y flexibilidad del equipo. Habilidades desarrolladas: Metodologías ágiles, SCRUM, Kanban, adaptabilidad.",
-    },
-    {
-      title: "Arquitectura de Software - Udemy",
-      body: "Realicé un curso en Udemy sobre arquitectura de software, profundizando en el diseño y desarrollo de sistemas digitales escalables y eficientes. Aprendí a crear estructuras de software que soportan el crecimiento y la evolución de las aplicaciones. Habilidades desarrolladas: Diseño de arquitectura, escalabilidad, eficiencia del software.",
-    },
-    {
-      title: "Clean Code - Udemy",
-      body: "Me especialicé en la creación de código limpio y mantenible a través de un curso en Udemy. Este curso me enseñó a escribir código que es fácil de leer, mantener y escalar, mejorando la calidad y el rendimiento de las aplicaciones. Habilidades desarrolladas: Código limpio, mantenimiento de código, buenas prácticas de programación.",
-    },
-    {
-      title: "Bootstrap Avanzado - Universidad Austral",
-      body: "Completé un curso avanzado en Bootstrap en la Universidad Austral, donde adquirí conocimientos profundos en este framework de diseño. Esto mejoró mis habilidades en el desarrollo de interfaces web responsive y atractivas. Habilidades desarrolladas: Diseño web responsive, Bootstrap avanzado, maquetación.",
-    },
-    {
-      title: "Angular - Udemy",
-      body: "Consolidé mis conocimientos en el framework Angular a través de un curso especializado en Udemy. Aprendí a desarrollar aplicaciones web dinámicas y eficientes utilizando Angular, uno de los frameworks más populares para el desarrollo frontend. Habilidades desarrolladas: Desarrollo en Angular, arquitectura frontend, aplicaciones dinámicas.",
-    },
-    {
-      title: "HTML5, PHP, MySQL - Udemy",
-      body: "Amplié mis conocimientos en tecnologías fundamentales como HTML5, PHP y MySQL mediante cursos en Udemy. Este aprendizaje me permitió dominar el desarrollo web completo, desde el diseño de la interfaz hasta la gestión de bases de datos. Habilidades desarrolladas: Desarrollo web, HTML5, PHP, MySQL, bases de datos.",
-    },
-    {
-      title: "Spring Boot - Udemy",
-      body: "Me especialicé en el desarrollo con Spring Boot a través de un curso en Udemy. Aprendí a utilizar este framework para construir aplicaciones Java modernas y robustas, optimizando el proceso de desarrollo y gestión de aplicaciones. Habilidades desarrolladas: Desarrollo con Spring Boot, aplicaciones Java, frameworks modernos.",
+      title: "Ciclo Básico de Ingeniería",
+      institution: "UNET",
+      period: "2013 – 2016",
+      description:
+        "Base sólida en fundamentos de ingeniería, matemáticas aplicadas y pensamiento lógico-analítico.",
     },
   ];
+
+  const certifications = [
+    {
+      title: "Java Full Stack Developer",
+      institution: "EGG Education",
+      description:
+        "600 horas de formación intensiva en desarrollo Full-Stack con Java. Fortalecimiento de competencias técnicas en frontend, backend e integración completa de la pila tecnológica.",
+    },
+    {
+      title: "Diplomado en Project Management",
+      institution: "Universidad Tecnológica Nacional (UTN)",
+      description:
+        "Profundo entendimiento de la gestión de productos y proyectos en la era digital, con enfoque en planificación estratégica, ejecución y control.",
+    },
+    {
+      title: "Diplomado en Metodologías Ágiles",
+      institution: "Universidad Tecnológica Nacional (UTN)",
+      description:
+        "Especialización en SCRUM, Kanban y metodologías ágiles aplicadas a entornos digitales dinámicos. Desarrollo de habilidades de adaptabilidad y mejora continua de procesos.",
+    },
+    {
+      title: "Diplomatura en Diseño y Dirección de Producto Digital",
+      institution: "Universidad Tecnológica Nacional (UTN) / Modalidad complementaria",
+      period: "2024",
+      description:
+        "Formación especializada en el diseño, dirección y gestión integral de productos digitales. Incluye metodologías de Design Thinking, UX/UI avanzado, prototipado, validación de hipótesis, roadmapping de producto, priorización de features, métricas de producto (North Star Metrics, AARRR) y liderazgo de squads multidisciplinarios. Enfoque práctico en el desarrollo y lanzamiento exitoso de aplicaciones y plataformas digitales en entornos ágiles.",
+    },
+    {
+      title: "Arquitectura de Software",
+      institution: "Udemy",
+      description:
+        "Profundización en diseño y desarrollo de sistemas escalables, eficientes y mantenibles a largo plazo.",
+    },
+    {
+      title: "Clean Code",
+      institution: "Udemy",
+      description:
+        "Especialización en escritura de código limpio, legible y fácil de mantener, siguiendo las mejores prácticas de la industria.",
+    },
+
+    {
+      title: "HTML5, PHP, MySQL",
+      institution: "Udemy",
+      description:
+        "Base sólida en desarrollo web full-stack clásico: HTML5, PHP y gestión de bases de datos relacionales con MySQL.",
+    },
+  ];
+
   return (
     <Inspector index={id} onObserver={onObserver}>
       <Section
-        id={"experiencias"}
-        type={"center"}
-        h={"h-full"}
-        title={"Experiencia Laboral"}
-        positionText={"text-center"}
-        extra={"py-32 sm:py-40 mt-20 sm:mt-40"}
+        id="educacion"
+        type="center"
+        h="h-full"
+        title="Educación & Formación"
+        positionText="text-center"
+        extra="py-32 sm:py-40 mt-20 sm:mt-40"
       >
-        <Container
-          extra={" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 w-full gap-20 "}
-        >
-          <article className="w-full flex flex-col gap-10 ">
-            <TextSubTitleItalic text={"Educación & Idiomas"} />
-            <TextBody
-              text={
-                " A lo largo de mi carrera, he completado varios programas educativos y cursos especializados que han contribuido a mi desarrollo profesional y personal. Aquí puedes encontrar un resumen de mis estudios y logros académicos."
-              }
-            />
-            {experiences.map(({ title, body }, index) => (
-              <article key={index} className="flex flex-col justify-start gap-10">
-                <TextSubTitle text={title} />
-                <TextBody text={body} />
-              </article>
-            ))}
-            <section className="flex flex-wrap justify-start items-center gap-10 pt-5 sm:pt-5 md:pt-10 lg:pt-20">
-              <article className="flex flex-col justify-center items-center gap-5">
-                <img
-                  src="https://img.freepik.com/premium-photo/flag-united-kingdom-uk-aka-union-jack_469558-1815.jpg"
-                  alt=""
-                  className="max-w-32 rounded-lg h-20"
-                />
-                <TextBody text={"B1"} />
-              </article>
-              <article className="flex flex-col justify-center items-center gap-5">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdfC_lFaZVz5GMJaNnEESCpEJHE7DSFzWiKA&s"
-                  alt=""
-                  className="max-w-32  rounded-lg h-20"
-                />
-                <TextBody text={"Nativo"} />
-              </article>
-              <article className="flex flex-col justify-center items-center gap-5">
-                <img
-                  src="https://img.freepik.com/free-vector/illustration-france-flag_53876-27099.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723334400&semt=ais_hybrid"
-                  alt=""
-                  className="max-w-32  rounded-lg h-20"
-                />
-                <TextBody text={"A1"} />
-              </article>
+        <Container extra="grid grid-cols-1 md:grid-cols-2 w-full gap-16 lg:gap-24">
+          {/* Columna Izquierda: Educación + Experiencia + Certificados */}
+          <article className="flex flex-col gap-16">
+            {/* Educación Formal */}
+            <section>
+              <TextSubTitleItalic text="Educación Formal" extra="mb-8" />
+              {education.map((edu, idx) => (
+                <div key={idx} className="mb-10">
+                  <TextSubTitle text={`${edu.title} — ${edu.institution}`} extra="mb-2" />
+                  <TextBody text={edu.period} extra="text-sm opacity-70 mb-3" />
+                  <TextBody text={edu.description} />
+                </div>
+              ))}
+            </section>
+
+            {/* Certificaciones */}
+            <section>
+              <TextSubTitleItalic text="Certificaciones & Cursos" extra="mb-8" />
+              <div className="grid grid-cols-1 gap-8">
+                {certifications.map((cert, idx) => (
+                  <div key={idx}>
+                    <TextSubTitle text={cert.title} extra="mb-2" />
+                    <TextBody text={cert.institution} extra="text-sm opacity-70 mb-2" />
+                    <TextBody text={cert.description} />
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Idiomas */}
+            <section className="pt-8">
+              <TextSubTitleItalic text="Idiomas" extra="mb-8" />
+              <div className="flex flex-wrap justify-start gap-12">
+                <div className="flex flex-col items-center gap-3">
+                  <img
+                    src="https://img.freepik.com/premium-photo/flag-united-kingdom-uk-aka-union-jack_469558-1815.jpg"
+                    alt="Bandera Reino Unido"
+                    className="max-w-28 rounded-lg shadow-md h-16 object-cover"
+                  />
+                  <TextBody text="Inglés — B1" />
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdfC_lFaZVz5GMJaNnEESCpEJHE7DSFzWiKA&s"
+                    alt="Bandera Argentina"
+                    className="max-w-28 rounded-lg shadow-md h-16 object-cover"
+                  />
+                  <TextBody text="Español — Nativo" />
+                </div>
+                <div className="flex flex-col items-center gap-3">
+                  <img
+                    src="https://img.freepik.com/free-vector/illustration-france-flag_53876-27099.jpg"
+                    alt="Bandera Francia"
+                    className="max-w-28 rounded-lg shadow-md h-16 object-cover"
+                  />
+                  <TextBody text="Francés — A1" />
+                </div>
+              </div>
             </section>
           </article>
+
+          {/* Columna Derecha: Skills */}
           <article className="flex flex-col gap-10">
-            <TextSubTitleItalic text={"Skills"} />
-            <article className=" flex justify-center items-start border border-gray-600 rounded-xl h-fit">
+            <TextSubTitleItalic text="Habilidades Técnicas" extra="mb-6" />
+            <div className="border border-gray-600/40 dark:border-gray-500/30 rounded-xl p-6 md:p-8 bg-white/5 dark:bg-black/20 backdrop-blur-sm">
               <SkillsSection />
-            </article>
+            </div>
           </article>
         </Container>
       </Section>

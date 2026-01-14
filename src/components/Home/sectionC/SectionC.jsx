@@ -1,216 +1,149 @@
-import { useState } from "react";
-import { FaCheck, FaUser, FaIdBadge, FaClipboardList, FaThumbsUp } from "react-icons/fa";
-import Inspector from "../../../shared/Inspector/Inspector";
-import MetricsSection from "../../../shared/MetricsSection";
-import Section from "../../../shared/Section/Section";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 import TextBody from "../../../shared/Text/TextBody";
 import TextSubTitle from "../../../shared/Text/TextSubTitle";
-import { motion } from "framer-motion";
-import Container from "../../../shared/Container";
-import TextSubTitleItalic from "../../../shared/Text/TextSubTitleItalic";
+import MetricsSection from "../../../shared/MetricsSection";
+import ExperienceSection from "../PaginaPrueba"; // Asegúrate que este sea el componente del carrusel
 
 const SectionC = ({ id, onObserver }) => {
   const steps = [
     {
-      id: "1",
-      title: "Desarrollador Full-Stack - Inside Dark Studio",
-      role: "Desarrollador Web3 para Plataforma de Juegos",
-      duration: "Marzo 2023 - Junio 2024",
+      id: 1,
+      company: "Bretit",
+      position: "Desarrollador Full-Stack",
+      period: "Enero 2025 – Presente",
+      duration: "Actual",
       description:
-        "En mi rol como Desarrollador Full-Stack en Inside Dark Studio, lideré el desarrollo de una innovadora plataforma Web3 para juegos utilizando Motoko. Mi trabajo involucró la creación de un ecosistema completo que incluye un marketplace integrado, pasarelas de pago seguras, funcionalidades de chat y salas de streaming en vivo. Implementé soluciones avanzadas para asegurar una experiencia de usuario fluida y segura, utilizando las últimas tecnologías en blockchain para garantizar la transparencia y la seguridad en todas las transacciones.",
-      responsibilities: [
-        {
-          subtitle: "Ecosistema Completo",
-          text: "Diseñé y desarrollé un marketplace completo que incluye funciones de compra y venta, así como pasarelas de pago seguras para facilitar transacciones. Además, creé funcionalidades de chat y salas de stream para mejorar la interacción del usuario y proporcionar una experiencia inmersiva en la plataforma.",
-        },
-        {
-          subtitle: "Interfaz de Usuario Reactiva",
-          text: "Utilicé React para construir una interfaz de usuario intuitiva y reactiva. Implementé componentes reutilizables y gestioné el estado de la aplicación para asegurar una experiencia de usuario fluida y atractiva, adaptando la interfaz a diferentes dispositivos y resoluciones.",
-        },
-        {
-          subtitle: "Blockchain",
-          text: "Implementé soluciones basadas en blockchain para garantizar la transparencia y la seguridad en las transacciones dentro de la plataforma. Esto incluyó la gestión de activos digitales, la ejecución de contratos inteligentes y la integración de tecnologías de ledger distribuido para asegurar la integridad de los datos.",
-        },
-        {
-          subtitle: "Comunicación en Tiempo Real",
-          text: "Desarrollé y optimicé sistemas de comunicación en tiempo real utilizando Node.js. Implementé funciones para gestionar chats y transmisiones en vivo, asegurando que la plataforma proporcionara una experiencia interactiva y en tiempo real para los usuarios.",
-        },
+        "Actualmente formo parte del equipo principal de desarrollo de Bretit, una plataforma SaaS de gestión comercial diseñada para optimizar procesos de ventas, seguimiento de clientes y organización diaria de equipos comerciales. Lidero la evolución continua de la aplicación web y móvil, implementando nuevas funcionalidades clave y mejorando la experiencia de usuario para vendedores, gerentes y empresarios.",
+      highlights: [
+        "Desarrollo y mantenimiento de interfaces intuitivas tanto en web como en aplicaciones móviles nativas (iOS y Android) con React y React Native",
+        "Implementación de sistemas de notificaciones push en tiempo real y calendarios inteligentes sincronizados",
+        "Creación de vistas personalizadas de agenda y pipeline de ventas para mejorar la productividad de los equipos comerciales",
+        "Optimización constante de rendimiento y experiencia de usuario en todos los dispositivos",
       ],
-      technologies: ["Motoko", "TypeScript", "JavaScript", "React", "Node.js", "Blockchain"],
-      metrics: [
-        { name: "Proyectos Completados", count: 10 },
-        { name: "Horas de Desarrollo", count: 3120 },
-      ],
+      technologies: ["React", "React Native", "Node.js", "TypeScript", "Firebase", "Redux Toolkit"],
     },
-    {
-      id: "2",
-      title: "Desarrollador Blockchain - Caniplay",
-      role: "Desarrollador de Reproductor de Música Basado en Blockchain",
-      duration: "Diciembre 2023 - Febrero 2024",
-      description:
-        "Como Desarrollador Blockchain en Caniplay, fui responsable del desarrollo de un innovador reproductor de música basado en tecnología blockchain. Mi rol incluyó diseñar una arquitectura descentralizada que proporciona seguridad y resistencia a la censura en el almacenamiento y reproducción de música. Trabajé en la integración de tecnologías avanzadas para asegurar una experiencia de usuario fluida y segura, implementando medidas de privacidad robustas y una interfaz reactiva para la reproducción descentralizada de música.",
-      responsibilities: [
-        {
-          subtitle: "Arquitectura Descentralizada",
-          text: "Diseñé una arquitectura blockchain para el almacenamiento y reproducción de música, asegurando alta seguridad y resistencia a la censura. Esto incluyó la implementación de nodos descentralizados y contratos inteligentes para gestionar el acceso y la distribución de contenido musical.",
-        },
 
-        {
-          subtitle: "Interfaz Intuitiva",
-          text: "Creé una interfaz de usuario intuitiva y reactiva que facilita la exploración y reproducción de música descentralizada. Esto incluyó el diseño de un sistema de navegación fácil de usar y la integración de funcionalidades de búsqueda y filtrado de música.",
-        },
-        {
-          subtitle: "Comunicación Instantánea",
-          text: "Implementé socket.io para permitir la interacción en tiempo real, facilitando la compartición instantánea de música y la comunicación entre usuarios. Esto incluyó la creación de canales de chat en vivo y la capacidad de compartir contenido musical de manera instantánea.",
-        },
-        {
-          subtitle: "Seguridad y Privacidad",
-          text: "Aplicé prácticas avanzadas de cifrado y protección de datos para asegurar la privacidad de los usuarios y la integridad del sistema. Esto incluyó la implementación de mecanismos de autenticación robustos y la encriptación de datos sensibles.",
-        },
+    {
+      id: 2,
+      company: "Inside Dark Studio",
+      position: "Desarrollador Web3 / Full-Stack",
+      period: "Marzo 2023 – Junio 2024",
+      duration: "1 año 4 meses",
+      description:
+        "Lideré el desarrollo técnico completo de una innovadora plataforma de juegos blockchain basada en Internet Computer (ICP), creando un ecosistema integral que combina gaming, economía digital y comunidad interactiva. La plataforma incluye marketplace NFT, sistema de pagos descentralizados, chat en tiempo real y salas de streaming en vivo integradas directamente en la blockchain.",
+      highlights: [
+        "Arquitectura completa Web3 utilizando Motoko como lenguaje principal en Internet Computer",
+        "Diseño e implementación de un marketplace funcional con compra/venta de activos digitales y pasarelas de pago seguras",
+        "Desarrollo de sistemas de comunicación en tiempo real (chat grupal y privado + salas de streaming)",
+        "Interfaz de usuario moderna y altamente reactiva construida con React y TypeScript",
+        "Garantía de transparencia y seguridad en todas las transacciones mediante contratos inteligentes en blockchain",
       ],
-      technologies: ["TypeScript", "JavaScript", "Motoko", "React", "socket.io", "Blockchain"],
-      metrics: [
-        { name: "Proyectos Desarrollados", count: 1 },
-        { name: "Horas de Desarrollo", count: 480 },
+      technologies: [
+        "Motoko",
+        "Internet Computer (ICP)",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "WebSocket",
+        "Blockchain",
       ],
     },
+
     {
-      id: "3",
-      title: "Product Manager y Project Manager - Cartelería Manna",
-      role: "Gestión Integral de Proyecto y Atención al Cliente",
-      duration: "Junio 2022 - Septiembre 2022",
+      id: 3,
+      company: "Caniplay",
+      position: "Desarrollador Blockchain (Freelance)",
+      period: "Noviembre 2023 – Enero 2024",
+      duration: "3 meses",
       description:
-        "En mi posición como Product Manager y Project Manager en Cartelería Manna, lideré el desarrollo y la implementación de un sistema integral de gestión de cartelería. Mi rol abarcó desde la planificación y ejecución del proyecto hasta la gestión directa con el cliente. Aseguré una implementación eficiente y satisfactoria de todas las funcionalidades del sistema, incluyendo la gestión de presupuestos, el control de stock y la administración de usuarios.",
-      responsibilities: [
-        {
-          subtitle: "Organización del Proyecto",
-          text: "Coordiné todas las fases del proyecto desde la planificación inicial hasta la ejecución final. Esto incluyó la gestión de cronogramas, la asignación de recursos y la supervisión del progreso para garantizar que todos los objetivos se cumplieran de manera oportuna y eficiente.",
-        },
-        {
-          subtitle: "Atención al Cliente",
-          text: "Mantuve una comunicación constante con el cliente para comprender sus necesidades y expectativas. Trabajé para asegurar que el sistema desarrollado cumpliese con los requisitos específicos del cliente, proporcionando soporte y ajustes según fuera necesario.",
-        },
-        {
-          subtitle: "Desarrollo de Funcionalidades Clave",
-          text: "Diseñé y desarrollé módulos esenciales como la gestión de presupuestos, el control de stock y la administración de usuarios. Esto incluyó la integración de funcionalidades específicas para mejorar la eficiencia operativa y la gestión de recursos.",
-        },
-        {
-          subtitle: "Tecnologías Aplicadas",
-          text: "Supervisé la implementación de tecnologías modernas como TypeScript, NestJS, MongoDB y Tailwind CSS. Esto incluyó la selección de herramientas y tecnologías adecuadas para optimizar el rendimiento y la escalabilidad del sistema.",
-        },
+        "Proyecto freelance para desarrollar un reproductor de música completamente descentralizado y resistente a censura, utilizando tecnología blockchain para el almacenamiento, distribución y monetización de contenido musical. El enfoque principal fue crear una experiencia fluida para artistas y oyentes mientras se garantizaba la inmutabilidad y privacidad de los datos.",
+      highlights: [
+        "Diseño de arquitectura descentralizada con almacenamiento en blockchain (Motoko)",
+        "Implementación de contratos inteligentes para gestión de derechos, reproducción y micropagos",
+        "Desarrollo de interfaz intuitiva y reactiva para búsqueda, playlists y reproducción continua",
+        "Sistema de comunicación en tiempo real para compartir tracks y comentarios entre usuarios",
+        "Aplicación estricta de mejores prácticas de privacidad y cifrado de datos sensibles",
       ],
-      technologies: ["TypeScript", "NestJS", "MongoDB", "Tailwind CSS"],
-      metrics: [
-        { name: "Fases del Proyecto Gestionadas", count: 5 },
-        { name: "Módulos Desarrollados", count: 8 },
-        { name: "Clientes Atendidos", count: 1 },
+      technologies: ["Motoko", "TypeScript", "React", "socket.io", "Blockchain", "IPFS"],
+    },
+
+    {
+      id: 4,
+      company: "Neurons",
+      position: "Project Manager & Desarrollador Full-Stack",
+      period: "Marzo 2023 – Noviembre 2023",
+      duration: "9 meses (roles combinados)",
+      description:
+        "En Neurons trabajé en proyectos digitales de alto impacto, comenzando como desarrollador full-stack y evolucionando rápidamente a Project Manager gracias a mi capacidad de organización y liderazgo técnico. Coordiné equipos multidisciplinarios, gestioné entregas a clientes y simultáneamente contribuí al desarrollo técnico de varias plataformas.",
+      highlights: [
+        "Transición exitosa de desarrollador a Project Manager en menos de 6 meses",
+        "Liderazgo y coordinación de equipos de diseño, desarrollo frontend/backend y QA",
+        "Desarrollo de aplicaciones web y móviles escalables con React, Node.js y PostgreSQL",
+        "Implementación de soluciones blockchain en proyectos seleccionados",
+        "Optimización de rendimiento, SEO técnico y diseño de experiencias de usuario (UI/UX)",
+        "Gestión integral de plazos, presupuestos y comunicación directa con clientes",
       ],
+      technologies: ["React", "Node.js", "PostgreSQL", "TypeScript", "Blockchain", "Agile/Scrum"],
+    },
+
+    {
+      id: 5,
+      company: "AZORDEV",
+      position: "Desarrollador Full-Stack",
+      period: "Julio 2022 – Mayo 2023",
+      duration: "11 meses",
+      description:
+        "Desarrollo de un sistema integral de gestión en la nube para proveedores de servicios de Internet (ISP/WISP), enfocado en alta disponibilidad, escalabilidad y facilidad de administración remota. La plataforma permitió a decenas de empresas gestionar clientes, facturación, monitoreo de red y soporte técnico desde una única interfaz moderna.",
+      highlights: [
+        "Diseño y desarrollo de arquitectura cloud con alta disponibilidad y recuperación automática",
+        "Implementación de paneles de administración remota y monitoreo en tiempo real",
+        "Creación de sistemas escalables capaces de soportar crecimiento sostenido de usuarios",
+        "Mantenimiento y soporte continuo post-lanzamiento con actualizaciones frecuentes",
+      ],
+      technologies: ["TypeScript", "NestJS", "MongoDB", "Tailwind CSS", "Docker", "AWS"],
+    },
+
+    {
+      id: 6,
+      company: "Cartelería Manna",
+      position: "Product & Project Manager",
+      period: "Junio 2022 – Septiembre 2022",
+      duration: "4 meses",
+      description:
+        "Responsable de la gestión integral y ejecución de un proyecto de sistema de cartelería digital para puntos de venta. Desde la definición de requisitos hasta la entrega final, coordiné el desarrollo, pruebas y puesta en producción, asegurando el cumplimiento de expectativas del cliente en tiempo y forma.",
+      highlights: [
+        "Gestión completa del ciclo de vida del proyecto (planificación → ejecución → entrega)",
+        "Diseño y supervisión del desarrollo de módulos clave: presupuestos, inventario y gestión de usuarios",
+        "Comunicación directa y constante con el cliente para ajustes y validaciones",
+        "Implementación exitosa con cero interrupciones en el negocio del cliente",
+      ],
+      technologies: ["TypeScript", "NestJS", "MongoDB", "Tailwind CSS", "Figma"],
     },
     {
-      id: "4",
-      title: "Desarrollador de Sistema Integral - AZORDEV",
-      role: "Desarrollo de Sistema Integral de Administración para ISP",
-      duration: "Julio 2022 - Mayo 2023",
-      description:
-        "Participé en el desarrollo de un sistema integral de administración para proveedores de servicios de Internet (ISP/WISP) en AZORDEV. Mi enfoque fue en crear una solución robusta y escalable que permite a los proveedores gestionar sus operaciones de manera eficiente. Implementé funcionalidades clave para la administración remota y aseguré la alta disponibilidad del sistema en entornos en la nube.",
-      responsibilities: [
-        {
-          subtitle: "Operación en la Nube",
-          text: "Desarrollé el sistema con un enfoque en la alta disponibilidad y resiliencia en entornos de nube. Implementé estrategias para asegurar que el sistema pudiera manejar grandes volúmenes de datos y usuarios sin comprometer la estabilidad y el rendimiento.",
-        },
-        {
-          subtitle: "Gestión Remota",
-          text: "Implementé funcionalidades que permiten la administración remota de módulos, facilitando a los proveedores la gestión eficiente del sistema desde cualquier ubicación. Esto incluyó la creación de interfaces de administración y herramientas para el monitoreo remoto.",
-        },
-        {
-          subtitle: "Escalabilidad y Soporte Continuo",
-          text: "Diseñé el sistema con características escalables para adaptarse al crecimiento de los proveedores. Incluí soporte continuo para asegurar que el sistema mantuviera su estabilidad y rendimiento a largo plazo, proporcionando actualizaciones y mantenimiento regular.",
-        },
-      ],
-      technologies: ["TypeScript", "NestJS", "MongoDB", "Tailwind CSS"],
-      metrics: [
-        { name: "Horas de Desarrollo", count: 2400 },
-        { name: "Clientes Atendidos", count: 15 },
-      ],
+      id: 7,
+      company: "",
+      position: "",
+      period: "",
+      duration: "",
+      description: "",
+      highlights: [],
+      technologies: [],
+    },
+    {
+      id: 8,
+      company: "",
+      position: "",
+      period: "",
+      duration: "",
+      description: "",
+      highlights: [],
+      technologies: [],
     },
   ];
 
-  return (
-    <Inspector index={id} onObserver={onObserver}>
-      <Section
-        id={"experiencias"}
-        type={"center"}
-        h={"h-full"}
-        title={"Experiencia Laboral"}
-        positionText={"text-center"}
-        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-32 sm:py-10 md:py-40"}
-      >
-        {steps.map((step, index) => (
-          <Card {...step} id={step.id} />
-        ))}
-      </Section>
-    </Inspector>
-  );
+  return <ExperienceSection experiences={steps} />;
 };
 
 export default SectionC;
-
-const Card = ({
-  title,
-  listItems,
-  metrics,
-  index,
-  technologies,
-  responsibilities,
-  description,
-  duration,
-  role,
-}) => {
-  return (
-    <Container extra={"w-full"}>
-      <motion.section
-        className={
-          "w-full sm:divide-x-2 sm:divide-Yellow flex flex-col items-start gap-20 justify-start"
-        }
-        initial={{ x: 48, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.75 }}
-      >
-        <section className={`w-full`}>
-          <h3
-            className={` text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-none font-BaskervilleItalic dark:text-white pb-10`}
-          >
-            {title}
-          </h3>
-          <section className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <TextBody text={role} extra={"font-bold"} />
-            <TextBody text={duration} extra={" text-end"} />
-          </section>
-          <section className="flex flex-col gap-5 pt-10">
-            <TextBody text={description} />
-          </section>
-          <section className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10">
-            {responsibilities.map(({ subtitle, text }, index) => (
-              <motion.section key={index} className="">
-                <TextSubTitle text={subtitle} key={index} extra={"font-bold pb-10"} />{" "}
-                <TextBody text={text} key={index} />
-              </motion.section>
-            ))}
-          </section>
-        </section>
-        <section className="px-0 sm:px-10">
-          <TextSubTitle text={"Tecnologías"} extra={"font-bold"} />
-
-          <section className="flex flex-wrap  gap-5 pt-5">
-            {technologies.map((e, index) => (
-              <TextBody text={e} key={index} />
-            ))}
-          </section>
-          <motion.section className="flex flex-col justify-center items-center h-full py-10">
-            <MetricsSection data={metrics} />
-          </motion.section>
-        </section>
-      </motion.section>
-    </Container>
-  );
-};
