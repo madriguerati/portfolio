@@ -54,12 +54,12 @@ const Navbar = ({ currentStep }) => {
 
   return (
     <section
-      className={`fixed top-0 left-0 flex justify-center w-full text-white  z-40 ${
+      className={`fixed top-0 left-0 flex justify-center w-full  text-white  z-40 ${
         currentStep === "contacto" ? "hidden transition" : ""
       }`}
     >
       <motion.section
-        className={`flex justify-between items-center h-20 transition-all duration-300 `}
+        className={`flex justify-between items-center h-20 transition-all duration-300  dark:bg-black`}
         initial={{
           backgroundColor: "rgba(33, 150, 243, 0)",
           width: "90%",

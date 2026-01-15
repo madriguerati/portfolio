@@ -5,6 +5,8 @@ import TextBody from "../../../shared/Text/TextBody";
 import TextSubTitle from "../../../shared/Text/TextSubTitle";
 import MetricsSection from "../../../shared/MetricsSection";
 import ExperienceSection from "../PaginaPrueba"; // Asegúrate que este sea el componente del carrusel
+import Section from "../../../shared/Section/Section";
+import Inspector from "../../../shared/Inspector/Inspector";
 
 const SectionC = ({ id, onObserver }) => {
   const steps = [
@@ -143,7 +145,20 @@ const SectionC = ({ id, onObserver }) => {
     },
   ];
 
-  return <ExperienceSection experiences={steps} />;
+  return (
+    <Inspector index={id} onObserver={onObserver}>
+      <Section
+        id={"experiencias"}
+        type={"center"}
+        h={"h-full"}
+        title={"Experiencia Laboral"}
+        positionText={"text-center"}
+        extra={"gap-10 sm:gap-10 md:gap-10 lg:gap-40 py-32 sm:py-10 md:py-40"}
+      >
+        <ExperienceSection experiences={steps} />
+      </Section>
+    </Inspector>
+  );
 };
 
 export default SectionC;

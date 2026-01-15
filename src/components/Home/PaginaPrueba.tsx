@@ -101,6 +101,7 @@ function ExperienceCard({
         h-[88vh] sm:h-[82vh] md:h-[90vh]
         flex flex-col gap-5
         pt-20
+        pl-20
         flex-shrink-0
         snap-center 
       `}

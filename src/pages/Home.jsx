@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleStepChange = (step) => setCurrentStep(step);
   return (
-    <>
+    <section className="dark:bg-gray-800">
       <Navbar currentStep={currentStep} />
       <SectionA id={"Inicio"} currentStep={currentStep} onObserver={handleStepChange} />
 
@@ -32,7 +32,7 @@ const Home = () => {
         onObserver={handleStepChange}
       />
       <SectionF id={"contacto"} currentStep={currentStep} onObserver={handleStepChange} />
-    </>
+    </section>
   );
 };
 
