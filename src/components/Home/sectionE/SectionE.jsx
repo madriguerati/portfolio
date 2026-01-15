@@ -11,7 +11,7 @@ const SectionE = ({ id, onObserver }) => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://drive.google.com/file/d/1opqos7gKpLhMZ-cUV5ZFcCiD3aq450mE/view?usp=sharing"
+          href="https://drive.google.com/file/d/1IfTlyZ0Dwys52KpSxghl3WQ8gl0Dp9aV/view?usp=sharing"
           className="py-2"
         >
           <img src={qre} alt="" className="max-w-80" />

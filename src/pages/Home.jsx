@@ -7,17 +7,19 @@ import SectionD from "../components/Home/SectionD/SectionD";
 import SectionE from "../components/Home/sectionE/SectionE";
 import SectionF from "../components/Home/SectionF/SectionF";
 import Footer from "../shared/Footer/Footer";
+import Example from "../components/Home/PaginaPrueba";
 
 const Home = () => {
   const [currentStep, setCurrentStep] = useState("1");
 
   const handleStepChange = (step) => setCurrentStep(step);
   return (
-    <>
+    <section className="dark:bg-gray-800">
       <Navbar currentStep={currentStep} />
       <SectionA id={"Inicio"} currentStep={currentStep} onObserver={handleStepChange} />
 
       <SectionB id={"Sobre mí"} currentStep={currentStep} onObserver={handleStepChange} />
+
       <SectionC
         id={"Experiencia Laboral"}
         currentStep={currentStep}
@@ -30,7 +32,7 @@ const Home = () => {
         onObserver={handleStepChange}
       />
       <SectionF id={"contacto"} currentStep={currentStep} onObserver={handleStepChange} />
-    </>
+    </section>
   );
 };
 
